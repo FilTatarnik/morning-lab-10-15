@@ -41,7 +41,38 @@ router.post('/', (req, res) => {
 		 	}
 		}
 	)
-})
+});
+
+
+// ******************** SHOW ROUTE ******************** //
+
+router.get('/:id', (req, res) => {
+
+	Room.findById(req.params.id,
+		(err, foundRoom) => {
+			if(err){console.log(`---------- ERROR ---------- \n`, err);}
+		 	else {
+		 		console.log(`---------- FOUND ROOM ---------- \n`, foundRoom);
+		 		res.render('../views/rooms/show.ejs', {
+		 			room: foundRoom
+		 		});
+		 	}
+		}
+	)
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
