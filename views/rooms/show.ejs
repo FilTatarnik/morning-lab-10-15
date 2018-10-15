@@ -12,6 +12,8 @@
 		<li>Floor: <%=room.floor%></li>
 	</ul>
 
+	<a href="/rooms/<%=room.id%>/edit">Edit Room</a>
+
 	<form action="/rooms/<%=room.id%>?_method=DELETE" method="POST">
 		<input type="submit" value="Delete Room">
 	</form>
