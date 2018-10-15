@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 		(err, allRooms) => {
 			if(err){console.log(`---------- ERROR ---------- \n`, err);}
 		 	else {
-		 		console.log(`---------- ALL ROOM ---------- \n`, allRooms);
+		 		console.log(`---------- ALL ROOMS ---------- \n`, allRooms);
 				res.render('../views/rooms/index.ejs', {
 					rooms: allRooms
 				});
@@ -62,8 +62,19 @@ router.get('/:id', (req, res) => {
 });
 
 
+// ******************** DESTROY ROUTE ******************** //
 
-
+router.delete('/:id', (req, res) => {
+	Room.findByIdAndDelete(req.params.id,
+		(err, deleteRoom) => {
+			if (err){console.log(`---------- ERROR ---------- \n`, err);}
+			else {
+				console.log(`---------- DELETE ROOM ---------- \n`, deleteRoom);
+				res.redirect('/rooms');
+			}
+		}
+		)
+})
 
 
 
