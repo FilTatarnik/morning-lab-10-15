@@ -9,4 +9,8 @@ router.get('/', (req, res) => {
 	res.render('../views/rooms/index.ejs')
 });
 
+router.get('/new', (req, res) => {
+	res.render('../views/rooms/new.ejs')
+});
+
 module.exports = router;
