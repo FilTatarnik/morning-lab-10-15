@@ -10,7 +10,10 @@
 	<form action="/rooms/<%=room.id%>?_method=PUT" method="POST">
 		Room name: <input type="text" name="name" value="<%=room.name%>"><br>
 		Purpose: <input type="text" name="purpose" value="<%=room.purpose%>"><br>
-		Floor: <input type="text" name="floor" value="<%=room.floor%>"><br>
+		Floor: <input type="text" name="floor" value="<%=room.floor%>"><br><br>
+		Furniture: <%=room.furniture%> <br><br>
+		<a href="/furniture/">Edit Furniture</a><br>
+
 		<input type="submit" value="Submit Room Edits">
 	</form>
 

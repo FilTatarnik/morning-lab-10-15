@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>FURNITURE - Index</h1>
+
+	<a href="furniture/new">NEW FURNITURE</a>
+
+	<ul>
+		<% for (let i = 0; i < furniture.length; i++) { %>
+			<li><a href="/furniture/<%=furniture[i]._id%>"><%=furniture[i].name%></a> (Material: <%=furniture[i].material%>)</a></li>
+		<% } %>
+
+	</ul>
+</body>
+</html>

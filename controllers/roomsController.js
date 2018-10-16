@@ -8,7 +8,7 @@ const Room = require('../models/rooms/rooms');
 // ******************** INDEX ROUTE ******************** //
 
 router.get('/', (req, res) => {
-	console.log(req);
+	// console.log(req);
 	Room.find({},
 		(err, allRooms) => {
 			if(err){console.log(`---------- ERROR ---------- \n`, err);}
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 });
 
 
-// ******************** NEW ROUTE ******************** //
+// ******************** NEW ROOM ROUTE ******************** //
 
 router.get('/new', (req, res) => {
 	res.render('../views/rooms/new.ejs')

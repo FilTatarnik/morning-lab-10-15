@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show ONE FURNITURE</title>
+</head>
+<body>
+
+	<h1><%=furniture.name%></h1>
+	<h2><%=furniture.material%></h2>
+	
+
+	<a href="/furniture/<%=furniture.id%>/edit">Edit Furniture</a>
+
+	<form action="/furniture/<%=furniture.id%>?_method=DELETE" method="POST">
+		<input type="submit" value="Delete Furniture">
+	</form>
+
+</body>
+</html>
