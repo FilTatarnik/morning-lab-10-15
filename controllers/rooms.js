@@ -80,9 +80,32 @@ router.delete('/:id', (req, res) => {
 // ******************** EDIT ROUTE ******************** //
 
 router.get('/:id/edit', (req, res) => {
-	
-})
+	Room.findById(req.params.id,
+		(err, foundRoom) => {
+			if (err){console.log(`---------- ERROR ---------- \n`, err);}
+			else {
+				console.log(`---------- FOUND ROOM ---------- \n`, foundRoom);
+				res.render('../views/rooms/edit.ejs', {
+					room: foundRoom
+				})
+			}
+		}
+	)
+});
 
+// ******************** UPDATE ROUTE ******************** //
+
+router.put('/:id', (req, res) => {
+	Room.findByIdAndUpdate(req.params.id, req.body,
+		(err, updateRoom) => {
+		 	if (err){console.log(`---------- ERROR ---------- \n`, err);}
+			else {
+				console.log(`---------- UPDATE ROOM ---------- \n`, updateRoom);
+				res.redirect('/rooms');
+			}	
+		 }
+	)
+});
 
 
 

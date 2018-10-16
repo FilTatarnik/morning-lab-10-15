@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Furniture = require('./furniture.js')
+const Furniture = require('../furniture/furniture.js')
 
 const roomsSchema = new mongoose.Schema({
 	name: {type: String, required: true},
