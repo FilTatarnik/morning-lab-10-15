@@ -44,6 +44,9 @@ router.post('/', (req, res) => {
 			if(err){console.log(`---------- ERROR ---------- \n`, err);}
 		 	else {
 		 		console.log(`---------- CREATED FURNITURE ---------- \n`, createdFurniture);
+				
+				Room.findOneAndUpdate({name: req.body.roomName});
+
 				res.redirect('/furniture');
 		 	}		
 		}
