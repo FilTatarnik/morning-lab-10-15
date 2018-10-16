@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const Room = require('../models/rooms/rooms');
 const Furniture = require('../models/furniture/furniture');
+const Room = require('../models/rooms/rooms');
 
 // ******************** INDEX ROUTE ******************** //
 
@@ -25,7 +25,14 @@ router.get('/', (req, res) => {
 // ******************** NEW FURNITURE ROUTE ******************** //
 
 router.get('/new', (req, res) => {
-	res.render('../views/furniture/new.ejs')
+	Room.find({}, (err, allRooms) => {
+			if(err){console.log(`---------- ERROR ---------- \n`, err);}
+		 	else {
+		 		console.log(`---------- FOUND ROOMS ---------- \n`, allRooms);
+				res.render('../views/furniture/new.ejs', {rooms: allRooms})
+		 	}			
+	})
+
 });
 
 

@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const Room = require('../models/rooms/rooms');
+const Furniture = require('../models/furniture/furniture');
 
 
 // ******************** INDEX ROUTE ******************** //
