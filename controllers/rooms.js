@@ -77,9 +77,11 @@ router.delete('/:id', (req, res) => {
 })
 
 
+// ******************** EDIT ROUTE ******************** //
 
-
-
+router.get('/:id/edit', (req, res) => {
+	
+})
 
 
 
